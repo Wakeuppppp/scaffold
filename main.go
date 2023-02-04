@@ -35,7 +35,7 @@ func main() {
 	}
 
 	// 2. 初始化日志
-	if err := logger.Init(); err != nil {
+	if err := logger.Init(settings.Conf.LogConfig); err != nil {
 		fmt.Println("logger init failed:", err)
 		return
 	}
@@ -43,7 +43,7 @@ func main() {
 	zap.L().Sync()
 
 	// 3. 初始化 MySQL
-	if err := mysql.Init(); err != nil {
+	if err := mysql.Init(settings.Conf.MySQLConfig); err != nil {
 		fmt.Println("MySQL init failed:", err)
 		return
 	}
@@ -51,7 +51,7 @@ func main() {
 	defer mysql.Close()
 
 	// 4. 初始化 Redis
-	if err := redis.Init(); err != nil {
+	if err := redis.Init(settings.Conf.RedisConfig); err != nil {
 		fmt.Println("Redis init failed:", err)
 		return
 	}

@@ -10,7 +10,7 @@
 package logger
 
 import (
-	"github.com/spf13/viper"
+	"demo/settings"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -26,16 +26,18 @@ import (
 )
 
 // Init 初始化Logger
-func Init() (err error) {
+func Init(config *settings.LogConfig) (err error) {
 	encoder := getEncoder()
 
-	writeSyncer := getLogWriter(viper.GetString("log.filename"),
-		viper.GetInt("log.max_size"),
-		viper.GetInt("max_backups"),
-		viper.GetInt("max_age"))
+	writeSyncer := getLogWriter(
+		config.Filename,
+		config.MaxSize,
+		config.MaxBackup,
+		config.MaxAge,
+	)
 
 	var l = new(zapcore.Level)
-	err = l.UnmarshalText([]byte(viper.GetString("log.level")))
+	err = l.UnmarshalText([]byte(config.Level))
 	if err != nil {
 		return
 	}

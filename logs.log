@@ -1,0 +1,9 @@
+{"level":"DEBUG","time":"2023-02-05T00:09:54.960+0800","caller":"scaffold/main.go:42","msg":"logger init success"}
+{"level":"ERROR","time":"2023-02-05T00:09:54.969+0800","caller":"mysql/mysql.go:33","msg":"MySQL init failed","error":"dial tcp: address 824634147408: invalid port"}
+{"level":"DEBUG","time":"2023-02-05T00:10:04.571+0800","caller":"scaffold/main.go:42","msg":"logger init success"}
+{"level":"DEBUG","time":"2023-02-05T00:10:04.580+0800","caller":"scaffold/main.go:50","msg":"MySQL init success"}
+{"level":"ERROR","time":"2023-02-05T00:10:04.580+0800","caller":"redis/redis.go:31","msg":"Redis ping failed","error":"dial tcp: address 824634311056: invalid port"}
+{"level":"DEBUG","time":"2023-02-05T00:10:25.311+0800","caller":"scaffold/main.go:42","msg":"logger init success"}
+{"level":"DEBUG","time":"2023-02-05T00:10:56.873+0800","caller":"scaffold/main.go:42","msg":"logger init success"}
+{"level":"DEBUG","time":"2023-02-05T00:10:56.885+0800","caller":"scaffold/main.go:50","msg":"MySQL init success"}
+{"level":"DEBUG","time":"2023-02-05T00:10:56.887+0800","caller":"scaffold/main.go:58","msg":"Redis init success"}
