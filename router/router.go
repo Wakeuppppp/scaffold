@@ -20,7 +20,7 @@ func Setup() *gin.Engine {
 	r.Use(logger.GinLogger(), logger.GinRecovery(true))
 
 	r.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "hello scaffold")
+		c.String(http.StatusOK, "this is a simple scaffold")
 	})
 
 	return r
